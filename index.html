@@ -3941,9 +3941,55 @@ interfaces.lldp.switch_name
           "proto": "kernel"
       }
   ]
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="inventory_computers_query" class="panel-title">/inventory/computers/query</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post queries to the inventory database controller using MongoDB query syntax</p><p>Example: /api/inventory/computers/query/?projection=raid.total_drives,raid.name { "query": { "raid.total_drives": { "$gt": 20 }, "dmi.sys_vendor": "HP" } }</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_inventory_computers_query"><span class="parent"></span>/inventory/computers/query</a> <span class="methods"><a href="#inventory_computers_query_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_inventory_computers_query" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#inventory_computers_query_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="inventory_computers_query_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/inventory/computers/query</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#inventory_computers_query_post_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="inventory_computers_query_post_request"><h3>Query Parameters</h3><ul><li><strong>limit</strong>: <em>(int - default: 250)</em><p>Maximum number of elements to return</p></li><li><strong>offset_id</strong>: <em>(string)</em><p>ObjectID to act as the offset (for pagenation)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>56f04b0a5742ee76aa836782</code></pre></div></li><li><strong>sort_direction</strong>: <em>(string - default: ASCENDING)</em><p>ASCENDING or DESCENDING (by objectID)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>ASCENDING</code></pre></div></li><li><strong>projection</strong>: <em>(string - default: mercury_id=1,_id=1)</em><p>Which fields to return or omit</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>cpu.frequency.max=1,raid.total_drives=1
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="inventory_computers_query" class="panel-title">/inventory/computers/query</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post queries to the inventory database controller using MongoDB query syntax</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_inventory_computers_query"><span class="parent"></span>/inventory/computers/query</a> <span class="methods"><a href="#inventory_computers_query_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_inventory_computers_query" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#inventory_computers_query_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>POST a query</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="inventory_computers_query_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/inventory/computers/query</h4></div><div class="modal-body"><div class="alert alert-info"><p>POST a query</p></div><ul class="nav nav-tabs"><li class="active"><a href="#inventory_computers_query_post_request" data-toggle="tab">Request</a></li><li><a href="#inventory_computers_query_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="inventory_computers_query_post_request"><h3>Query Parameters</h3><ul><li><strong>limit</strong>: <em>(int - default: 250)</em><p>Maximum number of elements to return</p></li><li><strong>offset_id</strong>: <em>(string)</em><p>ObjectID to act as the offset (for pagenation)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>56f04b0a5742ee76aa836782</code></pre></div></li><li><strong>sort_direction</strong>: <em>(string - default: ASCENDING)</em><p>ASCENDING or DESCENDING (by objectID)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>ASCENDING</code></pre></div></li><li><strong>projection</strong>: <em>(string - default: mercury_id=1,_id=1)</em><p>Which fields to return or omit</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>cpu.frequency.max=1,raid.total_drives=1
 interfaces.lldp.switch_name=1
-</code></pre></div></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="active_computers" class="panel-title">/active/computers</h3></div><div class="panel-body"><div class="top-resource-description"><p>Get only computers with an active ZeroMQ agent.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_active_computers"><span class="parent"></span>/active/computers</a> <span class="methods"><a href="#active_computers_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_active_computers" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#active_computers_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="active_computers_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/active/computers</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#active_computers_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="active_computers_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+</code></pre></div></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p></div><div class="tab-pane" id="inventory_computers_query_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>api/inventory/computers/query?projection=raid.total_drives,raid.name
+POST: {"query": {"raid.total_drives": {"$gt": 20} } }
+
+{
+  "limit": 250,
+  "total": 2,
+  "direction": "ASCENDING",
+  "items": [
+    {
+      "raid": [
+        {
+          "name": "Smart Array P440ar",
+          "total_drives": 26
+        },
+        {
+          "name": "Smart HBA H241",
+          "total_drives": 0
+        },
+        {
+          "name": "Smart HBA H241",
+          "total_drives": 0
+        }
+      ],
+      "_id": "573b4e385742ee23b15cdd58",
+      "mercury_id": "017f3b1adc67a79050e3655747a0b6b0711c81ad68"
+    },
+    {
+      "raid": [
+        {
+          "name": "Smart Array P440ar",
+          "total_drives": 26
+        },
+        {
+          "name": "Smart HBA H241",
+          "total_drives": 0
+        },
+        {
+          "name": "Smart HBA H241",
+          "total_drives": 0
+        }
+      ],
+      "_id": "5877fd5d5742ee0311097c52",
+      "mercury_id": "0110a1628669e487f48b3f8de13bebeafe2933c875"
+    }
+  ]
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="active_computers" class="panel-title">/active/computers</h3></div><div class="panel-body"><div class="top-resource-description"><p>Get only computers with an active ZeroMQ agent.</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_active_computers"><span class="parent"></span>/active/computers</a> <span class="methods"><a href="#active_computers_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_active_computers" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#active_computers_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="active_computers_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/active/computers</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#active_computers_get_request" data-toggle="tab">Request</a></li><li><a href="#active_computers_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="active_computers_get_request"><h3>Query Parameters</h3><ul><li><strong>limit</strong>: <em>(int - default: 250)</em><p>Maximum number of elements to return</p></li><li><strong>offset_id</strong>: <em>(string)</em><p>ObjectID to act as the offset (for pagenation)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>56f04b0a5742ee76aa836782</code></pre></div></li><li><strong>sort_direction</strong>: <em>(string - default: ASCENDING)</em><p>ASCENDING or DESCENDING (by objectID)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>ASCENDING</code></pre></div></li></ul></div><div class="tab-pane" id="active_computers_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
       "limit": 1,
       "total": 1,
       "direction": "ASCENDING",
@@ -3962,13 +4008,13 @@ interfaces.lldp.switch_name=1
                 "ping_port": 9004
               },
               "backend": {
-                "name": be1-dev1.kickstart.rackspace.com,
-                "datacenter": dev1,
-                "address": 10.127.29.99,
+                "name": "be1-dev1.kickstart.rackspace.com",
+                "datacenter": "dev1",
+                "address": "10.127.29.99",
                 "address_v6": null,
                 "frontend_port": 9001,
                 "backend_port": 9002
           },
       ]
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/queryParameters" target="_blank">queryParameters</a></h2></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#inventory_computers">/inventory/computers</a></li><li><a href="#inventory_computers__mercury_id_">/inventory/computers/{mercury_id}</a></li><li><a href="#inventory_computers_query">/inventory/computers/query</a></li><li><a href="#active_computers">/active/computers</a></li></ul></div></div></div></div></body></html>
+</code></pre></div></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#inventory_computers">/inventory/computers</a></li><li><a href="#inventory_computers__mercury_id_">/inventory/computers/{mercury_id}</a></li><li><a href="#inventory_computers_query">/inventory/computers/query</a></li><li><a href="#active_computers">/active/computers</a></li></ul></div></div></div></div></body></html>
