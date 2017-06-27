@@ -166,36 +166,60 @@
       .resource-modal li > ul {
         margin-bottom: 1em;
       }
-    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Mercury API documentation <small>version 0.0.1</small></h1><p></p><h3 id="overview"><a href="#overview">Overview</a></h3><p>The frontend mercury HTTP API allows us to query the inventory datatbase, inject RPC tasks, view task status, and retrieve RPC outputs</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="inventory_computers" class="panel-title">/inventory/computers</h3></div><div class="panel-body"><div class="top-resource-description"><p>Gets the current inventory with support for pagenation and custom projections</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_inventory_computers"><span class="parent"></span>/inventory/computers</a> <span class="methods"><a href="#inventory_computers_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_inventory_computers" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#inventory_computers_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="inventory_computers_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/inventory/computers</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#inventory_computers_get_request" data-toggle="tab">Request</a></li><li><a href="#inventory_computers_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="inventory_computers_get_request"><h3>Query Parameters</h3><ul><li><strong>limit</strong>: <em>(integer - default: 250)</em><p>Maximum number of elements to return</p></li><li><strong>offset_id</strong>: <em>(string)</em><p>ObjectID to act as the offset (for pagenation)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>56f04b0a5742ee76aa836782</code></pre></div></li><li><strong>sort_direction</strong>: <em>(string - default: ASCENDING)</em><p>ASCENDING or DESCENDING (by objectID)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>ASCENDING</code></pre></div></li><li><strong>projection</strong>: <em>(string - default: mercury_id=1,_id=1)</em><p>Which fields to return or omit</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>cpu.frequency.max=1,raid.total_drives=1
-interfaces.lldp.switch_name=1
-</code></pre></div></li></ul></div><div class="tab-pane" id="inventory_computers_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
-      "limit": 5,
-      "total": 104,
-      "direction": "ASCENDING",
-      "items": [
-          {
-              "_id": "56eae51c5742ee76aa83677f",
-              "mercury_id": "001183c41825ed761ceddab91e8fdb2a88d4943006"
-          },
-          {
-              "_id": "56eb6df75742ee76aa836780",
-              "mercury_id": "018baf9b8936161a5a954e470afcb781298d2448d9"
-          },
-          {
-              "_id": "56f039d15742ee76aa836781",
-              "mercury_id": "0137c992d1988be7b154a7633d3514a59718ca5104"
-          },
-          {
-              "_id": "56f04b0a5742ee76aa836782",
-              "mercury_id": "019ffb80cddf6a99aa4e401dc2ab5d749fae13b3ec"
-          },
-          {
-              "_id": "56f066cb5742ee76aa836783",
-              "mercury_id": "00be1514caff0518640530e749d4da5f1049ec5221"
-          }
-      ]
-}
-</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="inventory_computers__mercury_id_" class="panel-title">/inventory/computers/{mercury_id}</h3></div><div class="panel-body"><div class="top-resource-description"><p>Gets a single inventory object by mercury_id</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_inventory_computers__mercury_id_"><span class="parent"></span>/inventory/computers/{mercury_id}</a> <span class="methods"><a href="#inventory_computers__mercury_id__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_inventory_computers__mercury_id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#inventory_computers__mercury_id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="inventory_computers__mercury_id__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/inventory/computers/{mercury_id}</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#inventory_computers__mercury_id__get_request" data-toggle="tab">Request</a></li><li><a href="#inventory_computers__mercury_id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="inventory_computers__mercury_id__get_request"><h3>URI Parameters</h3><ul><li><strong>mercury_id</strong>: <em>required (string)</em></li></ul><h3>Query Parameters</h3><ul><li><strong>projection</strong>: <em>(string)</em><p>Which fields to return or omit</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>raid,os_storage
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Mercury API documentation <small>version 0.0.1</small></h1><p></p><h3 id="overview"><a href="#overview">Overview</a></h3><p>The frontend mercury HTTP API allows us to query the inventory datatbase, inject RPC tasks, view task status, and retrieve RPC outputs</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="inventory_computers" class="panel-title">/inventory/computers</h3></div><div class="panel-body"><div class="top-resource-description"><p>Gets the current inventory with support for pagenation and custom projections</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_inventory_computers"><span class="parent"></span>/inventory/computers</a> <span class="methods"><a href="#inventory_computers_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_inventory_computers" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#inventory_computers_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="inventory_computers_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/inventory/computers</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#inventory_computers_get_request" data-toggle="tab">Request</a></li><li><a href="#inventory_computers_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="inventory_computers_get_request"><h3>Query Parameters</h3><ul><li><strong>limit</strong>: <em>(integer - default: 250)</em><p>Maximum number of elements to return</p></li><li><strong>offset_id</strong>: <em>(string)</em><p>ObjectID to act as the offset (for pagenation)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>56f04b0a5742ee76aa836782</code></pre></div></li><li><strong>sort_direction</strong>: <em>(string - default: ASCENDING)</em><p>ASCENDING or DESCENDING (by objectID)</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>ASCENDING</code></pre></div></li><li><strong>projection</strong>: <em>(string - default: mercury_id,_id)</em><p>Which fields to return or omit</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>cpu.frequency.max,raid.total_drives
+interfaces.lldp.switch_name
+</code></pre></div></li></ul></div><div class="tab-pane" id="inventory_computers_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "Inventory Computers",
+  "description": "Return object from the inventory controller",
+  "properties": {
+    "limit": {
+      "type": "integer",
+      "description": "The maximum number of return results"
+    },
+    "total": {
+      "type": "integer",
+      "description": "The number of items present in the database"
+    },
+    "direction": {
+      "type": "string",
+      "description": "Sort direction. ASCENDING or DESCENDING",
+      "enum": []
+    },
+    "items": {
+      "type": "array",
+      "description": "Inventory objects",
+      "items": "object"
+    }
+  }
+}</code></pre><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "limit": 5,
+  "total": 104,
+  "direction": "ASCENDING",
+  "items": [
+    {
+      "_id": "56eae51c5742ee76aa83677f",
+      "mercury_id": "001183c41825ed761ceddab91e8fdb2a88d4943006"
+    },
+    {
+      "_id": "56eb6df75742ee76aa836780",
+      "mercury_id": "018baf9b8936161a5a954e470afcb781298d2448d9"
+    },
+    {
+      "_id": "56f039d15742ee76aa836781",
+      "mercury_id": "0137c992d1988be7b154a7633d3514a59718ca5104"
+    },
+    {
+      "_id": "56f04b0a5742ee76aa836782",
+      "mercury_id": "019ffb80cddf6a99aa4e401dc2ab5d749fae13b3ec"
+    },
+    {
+      "_id": "56f066cb5742ee76aa836783",
+      "mercury_id": "00be1514caff0518640530e749d4da5f1049ec5221"
+    }
+  ]
+}</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="inventory_computers__mercury_id_" class="panel-title">/inventory/computers/{mercury_id}</h3></div><div class="panel-body"><div class="top-resource-description"><p>Gets a single inventory object by mercury_id</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_inventory_computers__mercury_id_"><span class="parent"></span>/inventory/computers/{mercury_id}</a> <span class="methods"><a href="#inventory_computers__mercury_id__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_inventory_computers__mercury_id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#inventory_computers__mercury_id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="inventory_computers__mercury_id__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/inventory/computers/{mercury_id}</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#inventory_computers__mercury_id__get_request" data-toggle="tab">Request</a></li><li><a href="#inventory_computers__mercury_id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="inventory_computers__mercury_id__get_request"><h3>URI Parameters</h3><ul><li><strong>mercury_id</strong>: <em>required (string)</em></li></ul><h3>Query Parameters</h3><ul><li><strong>projection</strong>: <em>(string)</em><p>Which fields to return or omit</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>raid,os_storage
 interfaces.lldp.switch_name
 </code></pre></div></li></ul></div><div class="tab-pane" id="inventory_computers__mercury_id__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "mercury_id": "0110a1628669e487f48b3f8de13bebeafe2933c875",
@@ -4200,7 +4224,7 @@ interfaces.lldp.switch_name=1
         },
         "args": {
           "description": "Positional arguments being passed to the method",
-          "type": "array"
+          "type": "list"
         },
         "kwargs": {
           "description": "Keyword arguments being passed to the method",
@@ -4211,8 +4235,7 @@ interfaces.lldp.switch_name=1
     }
   },
   "required": ["query", "instruction"]
-}
-</code></pre><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+}</code></pre><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "query": {},
   "instruction": {
     "method": "echo",
