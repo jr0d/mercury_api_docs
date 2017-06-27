@@ -184,8 +184,7 @@ interfaces.lldp.switch_name
     },
     "direction": {
       "type": "string",
-      "description": "Sort direction. ASCENDING or DESCENDING",
-      "enum": []
+      "description": "Sort direction. ASCENDING or DESCENDING"
     },
     "items": {
       "type": "array",
@@ -4004,8 +4003,7 @@ interfaces.lldp.switch_name=1
     },
     "direction": {
       "type": "string",
-      "description": "Sort direction. ASCENDING or DESCENDING",
-      "enum": []
+      "description": "Sort direction. ASCENDING or DESCENDING"
     },
     "items": {
       "type": "array",
@@ -4229,7 +4227,28 @@ interfaces.lldp.switch_name=1
     }
   }
 }
-</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="rpc_jobs" class="panel-title">/rpc/jobs</h3></div><div class="panel-body"><div class="top-resource-description"><p>Query and inject new RPC jobs</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_rpc_jobs"><span class="parent"></span>/rpc/jobs</a> <span class="methods"><a href="#rpc_jobs_get"><span class="badge badge_get">get</span></a> <a href="#rpc_jobs_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_rpc_jobs" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#rpc_jobs_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div><div onclick="window.location.href = '#rpc_jobs_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Posting jobs requires a query and an instruction</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_jobs_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/rpc/jobs</h4></div><div class="modal-body"><ul class="nav nav-tabs"></ul><div class="tab-content"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_jobs_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/rpc/jobs</h4></div><div class="modal-body"><div class="alert alert-info"><p>Posting jobs requires a query and an instruction</p></div><ul class="nav nav-tabs"><li class="active"><a href="#rpc_jobs_post_request" data-toggle="tab">Request</a></li><li><a href="#rpc_jobs_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_jobs_post_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>:</p><pre><code>{
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="rpc_jobs" class="panel-title">/rpc/jobs</h3></div><div class="panel-body"><div class="top-resource-description"><p>Query and inject new RPC jobs</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_rpc_jobs"><span class="parent"></span>/rpc/jobs</a> <span class="methods"><a href="#rpc_jobs_get"><span class="badge badge_get">get</span></a> <a href="#rpc_jobs_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_rpc_jobs" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#rpc_jobs_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Get current jobs</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#rpc_jobs_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Posting jobs requires a query and an instruction</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_jobs_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/rpc/jobs</h4></div><div class="modal-body"><div class="alert alert-info"><p>Get current jobs</p></div><ul class="nav nav-tabs"><li class="active"><a href="#rpc_jobs_get_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_jobs_get_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "type": "object",
+  "title": "RPC Jobs Response",
+  "description": "An object containing RPC jobs",
+  "properties": {
+    "count": {"type": "integer", "description": "The number of active jobs"},
+    "jobs": {"type": "array", "description": "Jobs"}
+  }
+}</code></pre><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "count": 1,
+  "jobs": [
+    {
+      "_id": "59528f205742ee10465d89d7",
+      "task_count": 1,
+      "time_started": 1498582816.7795022,
+      "ttl_time_completed": "Tue Jun 27 17:00:16 2017",
+      "time_completed": 1498582816.8045027,
+      "job_id": "bd07bffa-5bae-438a-9864-fa39034040d4"
+    }
+  ]
+}</code></pre></div></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_jobs_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/rpc/jobs</h4></div><div class="modal-body"><div class="alert alert-info"><p>Posting jobs requires a query and an instruction</p></div><ul class="nav nav-tabs"><li class="active"><a href="#rpc_jobs_post_request" data-toggle="tab">Request</a></li><li><a href="#rpc_jobs_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_jobs_post_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>:</p><pre><code>{
   "$schema": "http://json-schema.org/draft-03/schema",
   "type": "object",
   "title": "RPC Job Payload",
@@ -4279,4 +4298,99 @@ interfaces.lldp.switch_name=1
 }
 </code></pre><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "job_id": "2ff2363b-c693-472c-af70-7f1c11da20c0"
-}</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Returned when encountering parsing errors or and invalid MongDB Query</p></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#inventory_computers">/inventory/computers</a></li><li><a href="#inventory_computers__mercury_id_">/inventory/computers/{mercury_id}</a></li><li><a href="#inventory_computers_query">/inventory/computers/query</a></li><li><a href="#active_computers">/active/computers</a></li><li><a href="#active_computers__mercury_id_">/active/computers/{mercury_id}</a></li><li><a href="#rpc_jobs">/rpc/jobs</a></li></ul></div></div></div></div></body></html>
+}</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Returned when encountering parsing errors or and invalid MongDB Query</p></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="rpc_jobs__job_id_" class="panel-title">/rpc/jobs/{job_id}</h3></div><div class="panel-body"><div class="top-resource-description"><p>Get a current job</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_rpc_jobs__job_id_"><span class="parent"></span>/rpc/jobs/{job_id}</a> <span class="methods"><a href="#rpc_jobs__job_id__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_rpc_jobs__job_id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#rpc_jobs__job_id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_jobs__job_id__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/rpc/jobs/{job_id}</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#rpc_jobs__job_id__get_request" data-toggle="tab">Request</a></li><li><a href="#rpc_jobs__job_id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_jobs__job_id__get_request"><h3>URI Parameters</h3><ul><li><strong>job_id</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="rpc_jobs__job_id__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "job": {
+      "_id": "59528f205742ee10465d89d7",
+      "task_count": 1,
+      "time_started": 1498582816.7795022,
+      "ttl_time_completed": "Tue Jun 27 17:00:16 2017",
+      "time_completed": 1498582816.8045027,
+      "job_id": "bd07bffa-5bae-438a-9864-fa39034040d4",
+      "instruction": {
+          "args": [
+              "Hello World!"
+          ],
+          "method": "echo"
+      }
+    }
+  }
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="rpc_jobs__job_id__status" class="panel-title">/rpc/jobs/{job_id}/status</h3></div><div class="panel-body"><div class="top-resource-description"><p>Get the status for a job</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_rpc_jobs__job_id__status"><span class="parent"></span>/rpc/jobs/{job_id}/status</a> <span class="methods"><a href="#rpc_jobs__job_id__status_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_rpc_jobs__job_id__status" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#rpc_jobs__job_id__status_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_jobs__job_id__status_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/rpc/jobs/{job_id}/status</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#rpc_jobs__job_id__status_get_request" data-toggle="tab">Request</a></li><li><a href="#rpc_jobs__job_id__status_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_jobs__job_id__status_get_request"><h3>URI Parameters</h3><ul><li><strong>job_id</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="rpc_jobs__job_id__status_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "job": {
+      "has_failures": false,
+      "tasks": [
+          {
+              "status": "SUCCESS",
+              "task_id": "9e112f88-57a5-4936-8618-69c998f6e703"
+          }
+      ],
+      "_id": "59528f205742ee10465d89d7",
+      "task_count": 1,
+      "time_started": 1498582816.7795022,
+      "ttl_time_completed": "Tue Jun 27 17:00:16 2017",
+      "time_completed": 1498582816.8045027,
+      "job_id": "bd07bffa-5bae-438a-9864-fa39034040d4",
+      "instruction": {
+          "args": [
+              "Hello World!"
+          ],
+          "method": "echo"
+      }
+    }
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="rpc_tasks__job_id_" class="panel-title">/rpc/tasks/{job_id}</h3></div><div class="panel-body"><div class="top-resource-description"><p>Get all tasks for a given Job, including task output</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_rpc_tasks__job_id_"><span class="parent"></span>/rpc/tasks/{job_id}</a> <span class="methods"><a href="#rpc_tasks__job_id__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_rpc_tasks__job_id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#rpc_tasks__job_id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_tasks__job_id__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/rpc/tasks/{job_id}</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#rpc_tasks__job_id__get_request" data-toggle="tab">Request</a></li><li><a href="#rpc_tasks__job_id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_tasks__job_id__get_request"><h3>URI Parameters</h3><ul><li><strong>job_id</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="rpc_tasks__job_id__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "count": 1,
+  "tasks": [
+      {
+        "progress": 0,
+        "action": "Completed",
+        "time_updated": 1498582816.8046803,
+        "port": 9003,
+        "traceback": null,
+        "args": [
+            "Hello World!"
+        ],
+        "ttl_time_completed": "Tue Jun 27 17:00:16 2017",
+        "time_completed": 1498582914.779134,
+        "host": "10.127.29.196",
+        "message": "Hello World!",
+        "task_id": "9e112f88-57a5-4936-8618-69c998f6e703",
+        "kwargs": { },
+        "time_queued": 1498582816.779616,
+        "_id": "59528f205742ee10465d89d8",
+        "mercury_id": "0110a1628669e487f48b3f8de13bebeafe2933c875",
+        "method": "echo",
+        "time_started": 1498582914.776404,
+        "timeout": 0,
+        "status": "SUCCESS",
+        "job_id": "bd07bffa-5bae-438a-9864-fa39034040d4"
+      }
+    ]
+  }
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="rpc_task__task_id_" class="panel-title">/rpc/task/{task_id}</h3></div><div class="panel-body"><div class="top-resource-description"><p>Get a task</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_rpc_task__task_id_"><span class="parent"></span>/rpc/task/{task_id}</a> <span class="methods"><a href="#rpc_task__task_id__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_rpc_task__task_id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#rpc_task__task_id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="rpc_task__task_id__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/rpc/task/{task_id}</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#rpc_task__task_id__get_request" data-toggle="tab">Request</a></li><li><a href="#rpc_task__task_id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rpc_task__task_id__get_request"><h3>URI Parameters</h3><ul><li><strong>task_id</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="rpc_task__task_id__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+  "task": {
+    "progress": 0,
+    "action": "Completed",
+    "time_updated": 1498582816.8046803,
+    "port": 9003,
+    "traceback": null,
+    "args": [
+        "Hello World!"
+    ],
+    "ttl_time_completed": "Tue Jun 27 17:00:16 2017",
+    "time_completed": 1498582914.779134,
+    "host": "10.127.29.196",
+    "message": "Hello World!",
+    "task_id": "9e112f88-57a5-4936-8618-69c998f6e703",
+    "kwargs": { },
+    "time_queued": 1498582816.779616,
+    "_id": "59528f205742ee10465d89d8",
+    "mercury_id": "0110a1628669e487f48b3f8de13bebeafe2933c875",
+    "method": "echo",
+    "time_started": 1498582914.776404,
+    "timeout": 0,
+    "status": "SUCCESS",
+    "job_id": "bd07bffa-5bae-438a-9864-fa39034040d4"
+  }
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#inventory_computers">/inventory/computers</a></li><li><a href="#inventory_computers__mercury_id_">/inventory/computers/{mercury_id}</a></li><li><a href="#inventory_computers_query">/inventory/computers/query</a></li><li><a href="#active_computers">/active/computers</a></li><li><a href="#active_computers__mercury_id_">/active/computers/{mercury_id}</a></li><li><a href="#rpc_jobs">/rpc/jobs</a></li><li><a href="#rpc_jobs__job_id_">/rpc/jobs/{job_id}</a></li><li><a href="#rpc_jobs__job_id__status">/rpc/jobs/{job_id}/status</a></li><li><a href="#rpc_tasks__job_id_">/rpc/tasks/{job_id}</a></li><li><a href="#rpc_task__task_id_">/rpc/task/{task_id}</a></li></ul></div></div></div></div></body></html>
